@@ -1,8 +1,9 @@
 config BR2_PACKAGE_FLUENT_BIT
     bool "fluent-bit"
     depends on BR2_INSTALL_LIBSTDCPP
+    depends on BR2_PACKAGE_OPENSSL
+    depends on BR2_TOOLCHAIN_USES_GLIBC
     depends on !BR2_STATIC_LIBS
-    select BR2_PACKAGE_MUSL_FTS if !BR2_TOOLCHAIN_USES_GLIBC
     help
       Fluent Bit is a Fast and Lightweight Logs and Metrics Processor and
       Forwarder for Linux, OSX, Windows and BSD family operating systems.
