@@ -7,13 +7,9 @@ FLUENT_BIT_INSTALL_STAGING = YES
 # https://docs.fluentbit.io/manual/installation/sources/build-and-install
 # General Options
 FLUENT_BIT_CONF_OPTS += -DFLB_RELEASE=Yes
+FLUENT_BIT_CONF_OPTS += -DFLB_BACKTRACE=No
 
 FLUENT_BIT_DEPENDENCIES += openssl
-
-#ifeq ($(BR2_TOOLCHAIN_USES_GLIBC),)
-#FLUENT_BIT_DEPENDENCIES += musl-fts
-#FLUENT_BIT_CONF_OPTS += -DCMAKE_EXE_LINKER_FLAGS=-lfts
-#endif
 
 define FLUENT_BIT_INSTALL_CONF
     mkdir -p $(TARGET_DIR)/etc/fluent-bit
